@@ -1,0 +1,65 @@
+/*
+  COLORS:
+    TAN: b9aeab
+    PURPLE: 816181
+    DARK BROWN: 393636
+    MAROON: 51342d
+    LIGHT BROWN: 513f3d
+
+*/
+
+
+@font-face {
+   font-family: Raleway;
+   src: url(fonts/Raleway-Black.ttf);
+   font-style: normal;
+   font-weight: 900;
+}
+
+@font-face {
+   font-family: Raleway;
+   src: url(fonts/Raleway-Medium.ttf);
+   font-style: normal;
+   font-weight: 400;
+}
+
+body {
+  font-family: Raleway;
+}
+
+a:link, a:visited{
+  color:#231F20;
+}
+
+a:hover{
+  color:#816181;
+}
+
+a:active{
+  color:#51342d;
+}
+
+
+h1{
+  font-weight: 900;
+  color: #231F20;
+}
+
+h2{
+  font-weight: 400;
+  color: #585656;
+}
+
+p { /*STYLE BODY COPY HERE*/
+
+}
+
+p a:link{
+  text-decoration: underline;
+  color: #816181;
+}
+
+p a:visited{
+  /*color: #585656;*/
+  color: #816181;
+}
