@@ -9,10 +9,10 @@
 	</div><!-- close .main-content-inner -->
 
 	<?php if ( is_front_page() ) : ?>
-		<div class="sidebar col-sm-12"> ITS THE FRONT PAGE
+		<div class="sidebar col-sm-12">
 	<?php endif; ?>
 	<?php if ( !is_front_page() ) : ?>
-		<div class="sidebar col-sm-12 col-md-4"> ITS NOT
+		<div class="sidebar col-sm-12 col-md-4">
 	<?php endif; ?>
 
 
