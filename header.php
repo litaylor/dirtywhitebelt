@@ -33,16 +33,37 @@
 				<?php $header_image = get_header_image();
 				if ( ! empty( $header_image ) ) { ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+						<img id = "headerPicForJS" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 				<?php } // end if ( ! empty( $header_image ) ) ?>
 
-
+				<?php if ( is_front_page() ) : ?>
 				<div class="site-branding">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<p class="site-description lead"><?php bloginfo( 'description' ); ?></p>
 				</div>
+				<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+				<script>
+					console.log("did it");
+					var width = $(window).width(), height = $(window).height();
+					var halfHeightCSS = (height/2)+"px";
+					$(document).ready(function(){
+						headerSrc = $("#headerPicForJS").attr('src');
+						headerUrl = "url("+headerSrc+")";
+						console.log(headerUrl);
+						$(".site-header-inner img").hide();
+						$(".site-header-inner").parent().css({
+							"background-image":headerUrl,
+							"background-size":"cover",
+							"background-position":"right bottom",
+							"height": halfHeightCSS
+						});
 
+					})
+
+				</script>
+			<?php endif; ?>
 			</div>
 		</div>
 	</div><!-- .container -->
@@ -64,7 +85,10 @@
 						</button>
 
 						<!-- Your site title as branding in the menu -->
-						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<img src="http://50.87.248.68/~dirtywh2/beta/wp-content/uploads/2016/12/dwb150.jpg" class="overflowLogo" />
+						</a>
+
 					</div>
 
 					<!-- The WordPress Menu goes here -->
