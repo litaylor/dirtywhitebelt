@@ -34,12 +34,21 @@
 
 <script>
 jQuery(document).ready(function($) {
-    console.log("yeaaa");
 		$(".navbar-toggle").click(function(){
 			$(".wr-megamenu-container").slideToggle();
 		});
 		$(".it-responsive-mega").click(function(){
 			$(".wr-megamenu-container").slideToggle();
+		});
+		var realFooterContentHeight = ($('.realFooterContent').outerHeight()+100) + "px";
+		$(".realFooter").css({
+			'height': realFooterContentHeight
+		});
+		$(window).resize(function(){
+			realFooterContentHeight = ($('.realFooterContent').outerHeight()+100) + "px";
+			$(".realFooter").css({
+				'height': realFooterContentHeight
+			})
 		})
 });
 

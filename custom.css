@@ -51,6 +51,11 @@ h2{
   color: #585656;
 }
 
+h1.site-title {
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
 h1.site-title a:link, h1.site-title a:hover, h1.site-title a:active, h1.site-title a:visited{
   color:#ffffff;
 }
@@ -59,8 +64,10 @@ p.site-description {
   color:#ffffff;
 }
 
-p { /*STYLE BODY COPY HERE*/
-
+div:not(.realFooter) p:not(.site-description) { /*STYLE BODY COPY HERE*/
+  font-size: 18px;
+  line-height: 1.9;
+  padding-bottom: 17.1px;
 }
 
 p a:link{
@@ -73,6 +80,35 @@ p a:visited{
   color: #816181;
 }
 
+blockquote {
+  background-color: #b9aeab;
+  border-left: 12px solid #51342d;
+  padding:0px 12px;
+  margin: 10px 20px 30px;
+}
+
+blockquote:after{
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -22px;
+  right: 0px;
+  bottom: 0px;
+  background: white;
+  z-index: -1;
+}
+
+blockquote:before{
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -28px;
+  right: 0px;
+  bottom: 0px;
+  background: #51342d;
+  z-index: -2;
+}
+
 /* DOING THE HEADER HERE */
 
 body:not(.home) .site-header-inner img{
@@ -80,7 +116,6 @@ body:not(.home) .site-header-inner img{
 }
 
 #nav_menu-2 li{
-  background-color:red;
   display: inline;
   width: 33%;
   float:left;
@@ -123,11 +158,15 @@ body:not(.home) .site-header-inner img{
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-#nav_menu-2 li a:hover span{
+#nav_menu-2 li a:hover span {
   background-color:rgba(129, 97, 129, 0.5);
 }
 
-#nav_menu-2 h3.widget-title{
+#nav_menu-2 h3.widget-title {
+  display: none;
+}
+
+#nav_menu-2 .current-menu-item {
   display: none;
 }
 
@@ -137,17 +176,42 @@ body:not(.home) .site-header-inner img{
   }
 }
 
+.wr-megamenu-container:not(.stick) .menu-item-home {
+  display: none;
+}
+
+.wr-megamenu-container.stick .menu-item-home {
+  display: block;
+}
+
+@media (max-width:783px){
+  .wr-megamenu-container {
+    display: none;
+  }
+  .wr-megamenu-container ul.wr-mega-menu {
+    float: none !important;
+    width: 100% !important;
+  }
+  ul.wr-mega-menu li{
+    text-align: center !important;
+    line-height: 80px !important;
+  }
+}
+
 @media (min-width:784px) {
   .wr-megamenu-container:not(.stick) ul.wr-mega-menu {
     float:none;
     position: absolute;
-    left:100px;
+    left:20%;
     right:0px;
   }
   ul.wr-mega-menu li{
     width: 25%;
     text-align: center;
     line-height: 80px;
+  }
+  .wr-megamenu-container.stick li {
+    width:20%;
   }
 }
 
@@ -241,8 +305,16 @@ body {
   text-decoration: underline;
 }
 
+.realFooterContent a {
+  white-space: nowrap;
+}
+
 #colophon{
   display: none;
+}
+
+.twitterLink::before{
+  content: url(icons/twitter.png);
 }
 
 .wr-megamenu-container ul.wr-mega-menu {
@@ -272,4 +344,27 @@ body {
 
 .site-navigation {
   margin-top:25px;
+}
+
+.wr-megamenu-container.stick{
+  /*border-bottom: thick blue solid;*/
+  border: solid transparent;
+  border-width: 0 0 8px;
+  border-image:url("icons/dwbsplat.png") 2 repeat;
+
+}
+
+.site-header-inner{
+  background: rgba(0,0,0,0.4);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 51%, rgba(0,0,0,0.4) 67%, rgba(0,0,0,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.4)), color-stop(50%, rgba(0,0,0,0.4)), color-stop(51%, rgba(0,0,0,0.4)), color-stop(67%, rgba(0,0,0,0.4)), color-stop(100%, rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 51%, rgba(0,0,0,0.4) 67%, rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 51%, rgba(0,0,0,0.4) 67%, rgba(0,0,0,0) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 51%, rgba(0,0,0,0.4) 67%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 51%, rgba(0,0,0,0.4) 67%, rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+}
+
+.blog .format-video h1.page-title:before{
+  content:url(http://50.87.248.68/~dirtywh2/beta/wp-content/uploads/2016/12/icon-video.png);
 }

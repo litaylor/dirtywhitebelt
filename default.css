@@ -27,7 +27,7 @@
 
 @media screen and (min-width: 783px) {
     .wr-megamenu-container ul.wr-mega-menu ul.sub-menu li:hover > a {
-        color: #41a62a;
+        /*color: #41a62a;*/
     }
 }
 
@@ -36,7 +36,7 @@
 }
 
 .wr-megamenu-container a:hover {
-    color: #41a62a;
+    /*color: #41a62a;*/
 }
 
 .wr-megamenu-container .current_page_item > a,
