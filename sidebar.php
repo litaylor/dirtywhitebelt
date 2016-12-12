@@ -12,7 +12,7 @@
 		<div class="sidebar col-sm-12">
 	<?php endif; ?>
 	<?php if ( !is_front_page() ) : ?>
-		<div class="sidebar col-sm-12 col-md-4">
+		<div class="sidebar col-sm-12 col-md-4 sidebarCustomSide">
 	<?php endif; ?>
 
 

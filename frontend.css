@@ -134,7 +134,7 @@
     float: left;
 }
 .wr-mega-menu > li > a {
-    padding: 15px;
+    /*padding: 15px;*/
     -webkit-transition: background 0.2s ease-in-out;
     -moz-transition: background 0.2s ease-in-out;
     -ms-transition: background 0.2s ease-in-out;
@@ -287,7 +287,7 @@ ul.sub-menu li a > i, ul.submenu-items li a > i {
 .stick {
     top: 0;
     position: fixed;
-    left: 0;
+    right: 0;
     margin: 0 auto;
     z-index: 1000;
 }
@@ -324,7 +324,7 @@ ul.sub-menu li a > i, ul.submenu-items li a > i {
         width: 100%;
     }
     .wr-megamenu-container ul li a {
-        color: #ffffff;
+        color: #231f20;
     }
     .wr-megamenu-container ul.wr-mega-menu li.wr-megamenu-item > a.menu-item-link:hover {
         background-color: #111111;
@@ -441,11 +441,17 @@ ul.sub-menu li a > i, ul.submenu-items li a > i {
         -webkit-opacity: 1 !important;
     }
     .it-responsive-mega{
-        display: block;
-        width: 38px;
+        width: 60px;
         clear: both;
-        height: 38px;
-        background: rgba(204, 204, 204, 0.5) url(../images/icon-menu.svg) center no-repeat;
+        height: 60px;
+        background: #ffffff url(../images/icon-menu.svg) center no-repeat;
+        z-index: 9999;
+    }
+    .it-responsive-mega:not(.stick){
+      display: none;
+    }
+    .it-responsive-mega.stick{
+      display: block;
     }
     .it-responsive-mega .glyphicon{
         font-size: 18px;
@@ -499,8 +505,8 @@ ul.sub-menu li a > i, ul.submenu-items li a > i {
         display: none !important;
     }
     .wr-megamenu-container.stick.active{
-        top: 38px;
-        height: 90%;
+        /*top: 38px;*/
+        /*height: 90%;*/
         overflow: auto;
         overflow-scrolling: touch;
         -o-overflow-scrolling: touch;

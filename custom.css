@@ -89,17 +89,23 @@ body:not(.home) .site-header-inner img{
   height: 200px;
 }
 
+.sidebarCustomSide #nav_menu-2 li{
+  width: 100%;
+}
+
 #nav_menu-2 li a{
-  display: inline;
+  /*display: inline;*/
   padding:0;
-  /*position: absolute;
-  top:0px;
-  height: 100%;*/
+  position: absolute;
+  /*top:0px;*/
+  height: 100%;
+  width: 100%;
 }
 
 #nav_menu-2 li a img{
-  width: 100%;
-  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 500%;
   padding:0;
 }
 
@@ -108,8 +114,17 @@ body:not(.home) .site-header-inner img{
   z-index: 900;
   top:0px;
   left:0px;
-  background-color: white;
-  /*line-height: 200px;*/
+  width:100%;
+  height:100%;
+  line-height: 200px;
+  color:#ffffff;
+  font-weight: 900;
+  font-size:20px;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+#nav_menu-2 li a:hover span{
+  background-color:rgba(129, 97, 129, 0.5);
 }
 
 #nav_menu-2 h3.widget-title{
@@ -122,6 +137,55 @@ body:not(.home) .site-header-inner img{
   }
 }
 
+@media (min-width:784px) {
+  .wr-megamenu-container:not(.stick) ul.wr-mega-menu {
+    float:none;
+    position: absolute;
+    left:100px;
+    right:0px;
+  }
+  ul.wr-mega-menu li{
+    width: 25%;
+    text-align: center;
+    line-height: 80px;
+  }
+}
+
+@media (min-width:784px) {
+  .wr-megamenu-container.stick ul.wr-mega-menu{
+    float:none;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1200px) {
+  .wr-megamenu-container.stick ul.wr-mega-menu{
+    width:1140px;
+  }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+  .wr-megamenu-container.stick ul.wr-mega-menu{
+    width:960px;
+  }
+}
+
+@media (min-width:784px) and (max-width:991px) {
+  .wr-megamenu-container.stick ul.wr-mega-menu{
+    width:720px;
+  }
+}
+
+ul.wr-mega-menu li{
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+
+.navbar-default{
+  border: none;
+}
+
 .navbar-brand{
   padding-left: 0px;
 }
@@ -129,11 +193,13 @@ body:not(.home) .site-header-inner img{
 body {
   position:relative;
   z-index:0;
-  background-color: #231F20;
 }
 
 .site-header, .site-navigation, .main-content {
   z-index: 100;
+}
+
+.main-content {
   background-color: white;
 }
 
@@ -150,6 +216,7 @@ body {
   z-index: -100;
   left:0px;
   height:500px;
+  background-color: #231F20;
 }
 
 .realFooterContent{
@@ -161,11 +228,11 @@ body {
 }
 
 .realFooterContent h1, .realFooterContent h2 {
-  color: #818181;
+  color: #ffffff;
 }
 
 .realFooterContent a:link, .realFooterContent a:visited{
-  color: #818181;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -184,11 +251,25 @@ body {
 
 .overflowLogo {
   position: absolute;
-  top:-16px;
+  top:-20px;
   height: 100px;
   z-index: 1000;
 }
 
 #masthead .container{
   padding-bottom: 0px;
+}
+
+#masthead {
+  margin-bottom: -25px;
+}
+
+.site-header .container .row:not([style*='background-image: url("http://50.87.248.68/~dirtywh2/beta/wp-content/uploads/2016/12/cropped-cropped-dwbpic.jpg")']) {
+  margin-bottom: 25px;
+}
+
+
+
+.site-navigation {
+  margin-top:25px;
 }
